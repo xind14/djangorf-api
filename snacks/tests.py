@@ -17,11 +17,11 @@ class SnackTests(APITestCase):
         test_snack = Snack.objects.create(
             name="pizza",
             purchaser=testuser1,
-            description="Better for collecting leaves than a shovel.",
+            description="Saucy.",
         )
         test_snack.save()
 
-    def test_things_model(self):
+    def test_snacks_model(self):
         snack = Snack.objects.get(id=1)
         actual_purchaser = str(snack.purchaser)
         actual_name = str(snack.name)
@@ -47,9 +47,9 @@ class SnackTests(APITestCase):
         snack = response.data
         self.assertEqual(snack["name"], "pizza")
 
-    def test_create_thing(self):
+    def test_create_snack(self):
         url = reverse("snack_list")
-        data = {"purchaser": 'testuser1', "name": "chips", "description": "Crunchy and delicious potato chips."}
+        data = {"purchaser": 1, "name": "chips", "description": "Crunchy and delicious potato chips."}
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         snacks = Snack.objects.all()
@@ -59,7 +59,7 @@ class SnackTests(APITestCase):
     def test_update_snack(self):
         url = reverse("snack_detail", args=(1,))
         data = {
-            "purchaser": 'testuser1',
+            "purchaser": 1,
             "name": "pizza",
             "description": "Saucy.",
         }
