@@ -1,29 +1,34 @@
+# Lab: Class 31 - Django REST Framework & Docker
 
-# LAB - Class xx
-## Project: Project Name Here
-### Author: Student/Group Name
+## Author: Xin Deng
 
 ### Links and Resources
-- [Back-end Server URL] # Fill in when applicable
-- [Front-end Application URL] # Fill in when applicable
 
-### Setup
-- Create a `.env` file with the following requirements:
-  - PORT - Port Number
-  - DATABASE_URL - URL to the running Postgres instance/db
+- chatGPT
+- [Class 31 Demo](https://github.com/codefellows/seattle-code-python-401d24/tree/main/class-31/demo)
 
-### How to Initialize/Run Your Application
-- Example: `python main.py`
+### Overview - Django
 
-### How to Use Your Library
-- Provide instructions here if applicable
+This is a project using Django REST Framework to create an API, then “containerize” it with Docker.
 
-### Tests
+
+
+#### Version 1.0
+
+Build 1.0 Feature Tasks
+
+1. Create custom version of Things API demo
+2. Create a model and add to admin
+3. Model should have as many fields as the demo
+4. Model should have one foreign key
+5. Implement Docker
+
+
+
+### How to Initialize/Run Application
+
+- `docker-compose up --build`
+
 #### How to Run Tests
-- Describe how to run tests
 
-#### Tests of Note
-- Any noteworthy information about the tests
-
-#### Incomplete Tests
-- Describe any tests that were not completed or skipped
+- `python manage.py test`
