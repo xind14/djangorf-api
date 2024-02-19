@@ -17,15 +17,17 @@ This is a project using Django REST Framework to create an API, then “containe
 
 Build 1.0 Feature Tasks
 
-1. Create web site in Django with 2 pages: snack list, snack detail
+1. Create custom version of Things API demo
 2. Create a model and add to admin
-3. Add urls and views to project and app
-4. Write tests using testcase
+3. Model should have as many fields as the demo
+4. Model should have one foreign key
+5. Implement Docker
+
 
 
 ### How to Initialize/Run Application
 
-- `python manage.py runserver`
+- `docker-compose up --build`
 
 #### How to Run Tests
 
