@@ -1,6 +1,7 @@
 from rest_framework import generics
 from .serializers import SnackSerializer
 from .models import Snack
+from .permissions import IsOwnerOrReadOnly #new
 
 
 
@@ -17,3 +18,4 @@ class SnackList(generics.ListCreateAPIView):
 class SnackDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snack.objects.all()
     serializer_class = SnackSerializer
+    permission_classes = (IsOwnerOrReadOnly,) #new
