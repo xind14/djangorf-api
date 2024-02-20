@@ -76,3 +76,9 @@ class SnackTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         snacks = Snack.objects.all()
         self.assertEqual(len(snacks), 0)
+
+    def test_authentication_required(self):
+        self.client.logout()
+        url = reverse("thing_list")
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
