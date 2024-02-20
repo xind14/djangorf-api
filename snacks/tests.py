@@ -20,6 +20,9 @@ class SnackTests(APITestCase):
             description="Saucy.",
         )
         test_snack.save()
+        
+    def setUp(self):
+        self.client.login(username="testuser1", password="pass")
 
     def test_snacks_model(self):
         snack = Snack.objects.get(id=1)
@@ -79,6 +82,6 @@ class SnackTests(APITestCase):
 
     def test_authentication_required(self):
         self.client.logout()
-        url = reverse("thing_list")
+        url = reverse("snack_list")
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)

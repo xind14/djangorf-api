@@ -146,3 +146,14 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ]
 }
+
+
+
+# create superuser inside container
+# docker compose run or exec (if already running to execute) web python manage.py migrate 
+# docker compose exec web python manage.py createsuperuser
+# docker compose exec web pip install django
+# docker compose exec web pip freeze > requirements.txt
+# docker compose exec web pip install psycopg2-binary
+# docker compose exec web pip freeze > requirements.txt
+# docker compose run web pip freeze > requirements.txt
